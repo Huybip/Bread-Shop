@@ -1,11 +1,57 @@
-@import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+/* Màu chủ đạo giống giao diện mẫu */
+:root {
+    --bm-brown: #5b2626;
+    --bm-brown-dark: #441b1b;
+    --bm-light-bg: #f7f7f9;
+}
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+.bg-brown {
+    background-color: var(--bm-brown) !important;
+}
+
+.text-brown {
+    color: var(--bm-brown) !important;
+}
+
+.btn-brown {
+    background-color: var(--bm-brown) !important;
+    border-color: var(--bm-brown) !important;
+}
+
+.btn-brown:hover {
+    background-color: var(--bm-brown-dark) !important;
+    border-color: var(--bm-brown-dark) !important;
+}
+
+.btn-outline-brown {
+    color: var(--bm-brown) !important;
+    border-color: var(--bm-brown) !important;
+    background-color: transparent !important;
+}
+
+.btn-outline-brown:hover {
+    color: #fff !important;
+    background-color: var(--bm-brown) !important;
+    border-color: var(--bm-brown) !important;
+}
+
+/* Card sản phẩm trên trang home */
+.product-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Offcanvas danh mục rộng hơn một chút trên desktop */
+@media (min-width: 992px) {
+    #categorySidebar.offcanvas-start {
+        width: 320px;
+    }
 }
